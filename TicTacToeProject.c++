@@ -1,3 +1,5 @@
+//Added last winning or draw board.
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<iostream>
@@ -11,6 +13,17 @@ void play();
 void board(int );
 void choice(int );
 int win(int );
+void lastBoard(){
+	cout<<"     |"<<"     |"<<"     |"<<endl;
+    cout<<"  "<<set[0]<<"  |"<<"  "<<set[1]<<"  |"<<"  "<<set[2]<<"  |"<<endl;
+    cout<<"_____|"<<"_____|"<<"_____|"<<endl;
+    cout<<"     |"<<"     |"<<"     |"<<endl;
+    cout<<"  "<<set[3]<<"  |"<<"  "<<set[4]<<"  |"<<"  "<<set[5]<<"  |"<<endl;
+    cout<<"_____|"<<"_____|"<<"_____|"<<endl;
+    cout<<"     |"<<"     |"<<"     |"<<endl;
+    cout<<"  "<<set[6]<<"  |"<<"  "<<set[7]<<"  |"<<"  "<<set[8]<<"  |"<<endl;
+    cout<<"_____|"<<"_____|"<<"_____|"<<endl<<endl;
+};
 
 int main()
 {
@@ -53,7 +66,7 @@ void play()
         n++;
     }
 
-    cout << "\033[2J\033[1;1H";
+    //cout << "\033[2J\033[1;1H";     //gibberish deleted.
     if(n<=8)
         if(n%2!=0)
             cout<<"     Congratulations Player 1 Wins."<<endl;
@@ -62,6 +75,8 @@ void play()
 
     if(n>8)
         cout<<"         Match Draw."<<endl;
+        
+        lastBoard();
 
     set[0]='1';
     set[1]='2';
@@ -78,7 +93,8 @@ void play()
 
 void board(int n)
 {
-    cout << "\033[2J\033[1;1H";
+    
+    //cout << "\033[2J\033[1;1H";    //gibberish deleted
 
     cout<<"         "<<"Tic Tac Toe Game..."<<endl<<endl;
     cout<<"     "<<"Player 1->'X'"<<"        "<<"Player 2->'O'"<<endl<<endl;
